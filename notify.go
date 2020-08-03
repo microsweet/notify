@@ -18,7 +18,7 @@ func main() {
 
 	for {
 		time.Sleep(30 * time.Minute)
-		now := time.Now().Format("15:04")
+		now := time.Now().Format("15:05")
 		nowPrev, _ := strconv.Atoi(strings.Split(now, ":")[0])
 		nowNex, _ := strconv.Atoi(strings.Split(now, ":")[1])
 		fmt.Println(goos)
