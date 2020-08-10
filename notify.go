@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"os"
+	//"os"
 	"runtime"
 	"strconv"
 	"strings"
@@ -18,7 +18,7 @@ func main() {
 
 	for {
 		time.Sleep(30 * time.Minute)
-		now := time.Now().Format("15:05")
+		now := time.Now().Format("15:04")
 		nowPrev, _ := strconv.Atoi(strings.Split(now, ":")[0])
 		nowNex, _ := strconv.Atoi(strings.Split(now, ":")[1])
 		fmt.Println(goos)
@@ -36,7 +36,8 @@ func main() {
 			DefaultIcon: "icon/default.png",
 			AppName:     "my test app",
 		})
-		pngPath, _ := os.Getwd()
+		//pngPath, _ := os.Getwd()
+		pngPath := "/home/microsweet/go/src/notify"
 		pngPath = pngPath + "/appointment-soon.png"
 		notify.Push("现在时间"+now+"，休息一下吧", "", pngPath, notificator.UR_CRITICAL)
 	}
